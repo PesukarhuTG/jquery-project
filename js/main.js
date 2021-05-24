@@ -241,6 +241,5 @@ $(function () {
 	$('button').click(summCount);
 
 price.text(finalPrice);
-
 });
 
