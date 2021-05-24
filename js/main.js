@@ -161,7 +161,7 @@ $(function () {
 
 	function summCount() {
 		finalPrice = basePrice * +typeAuto.val() * carMileage * +typeColor.val() * +typeOfWheel + consult;
-		price.text(finalPrice);
+		price.text(finalPrice.toFixed());
 	}
 
 	//check mileage input
