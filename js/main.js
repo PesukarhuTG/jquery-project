@@ -53,7 +53,6 @@ $(function () {
 		} else {
 
 			let translateHeight = -($('.viewport').height() * (slideNow));
-			console.log(translateHeight);
 			
 			$('.sliderwprapper').css({
 				'transform': 'translate(0,'+translateHeight+'px)'
@@ -241,5 +240,54 @@ $(function () {
 	$('button').click(summCount);
 
 price.text(finalPrice);
+
+// ====================== SPECIAL OFFER ======================
+
+	//use libruary Numeric for number check
+	$('.input-cart-number').numeric();
+	$('#card-ccv').numeric();
+
+	//find all 4 input for card number and check keyup + change input
+	$('.input-cart-number').on('keyup change', function() {
+
+				//значение, вписываемое в input, дублируем в span на изображении,
+				//при этом номер span соответствует порядковому номеру поля input, куда пишем цифры
+				$('.number span:nth-child(' +$(this).index()+ ')').text($(this).val());
+
+				if ($(this).val().length > 3) {
+					//jump to next input
+					$(this).next().focus();
+
+				} if ($(this).val().length < 1) {
+					//jump to prev input for deleting or changing
+					$(this).prev().focus();
+
+				} if ($(this).val().length > 3 && $(this).index() == 4) {
+					$('#card-holder').focus();
+				}
+	})
+
+
+	$('#card-holder').on('keyup change', function() {
+		$('.card-holder div').text($(this).val());
+	})
+
+	$('#card-expiration-month').change(function () {
+		$('span.month').text($(this).val()+'/');
+	})
+
+	$('#card-expiration-year').change(function () {
+		$('span.year').text($(this).val());
+	})
+
+	$('#card-ccv').on('focus', function() {
+		$('.credit-card-box').addClass('hover');
+	}).on('blur', function () {
+		$('.credit-card-box').removeClass('hover');
+	}).on('keyup change', function() {
+		$('.ccv').text($(this).val());
+	});
+
+
 });
 

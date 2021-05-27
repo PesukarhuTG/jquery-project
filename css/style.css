@@ -18,6 +18,8 @@ h1 {
 
 h2 {
 	font-size: 26px;
+	text-align: center;
+	line-height: 1.2;
 }
 
 h4 {
@@ -31,11 +33,10 @@ h4 {
 }
 
 section {
-	height: 100vh;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	padding:10px 20px;
+	padding: 30px 20px;
 }
 
 #info {
@@ -44,32 +45,27 @@ section {
 	display: flex;
 	flex-direction: column;
 	height: 80vh;
-	padding: 20px 0;
 }
 
 #about {
 	background: #fff;
 	color: #252525;
 	flex-direction: column;
-	padding: 20px 0;
 }
 
 #price {
 	background-color: #0077db;
-	padding: 20px 0;
 	color: #fff;
 }
 
-#rewiews {
-	background-color: #4caf50;
+#offer {
+	background-color: #ffffff;
 	flex-direction: column;
-	padding: 20px 0;
 }
 
 #contacts {
 	background-color: #fb8c00;
 	flex-direction: column;
-	padding: 20px 0;
 }
 
 /* ===============================HAMBURGER MENU =============================== */
@@ -123,9 +119,10 @@ section {
 /* ===============================POP UP MENU =============================== */
 menu {
 	position: fixed;
-	width: 30%;
+	width: 400px;
 	height: 100vh;
 	background-color: #000;
+	opacity: 0.97;
 	left: 0;
 	margin: 0;
 	top: 0;
@@ -137,7 +134,7 @@ menu {
 }
 
 .active-menu {
-	transform: translateX(-20%);
+	transform: translateX(0%);
 }
 
 ul {
@@ -210,6 +207,7 @@ a:hover {
 	display: inline-block;
 	font-size: 16px;
 	padding: 20px;
+	text-align: center;
 }
 
 .nav-item {
@@ -272,21 +270,14 @@ a.active-tab {
 	background-repeat: no-repeat;
 }
 
-.slide {
-	max-width: 1200px !important;
-    width: 100% !important;
-	max-height: 85vh !important;
-    height: 95% !important;
-	display: flex;
-	justify-content: space-around;
-	padding-top: 20px;
-}
-
 .viewport {
-	height: 100%;
+	height: 500px;
 	display: block;
 	position: relative;
-	user-select: none;
+	-webkit-user-select: none;
+	   -moz-user-select: none;
+	    -ms-user-select: none;
+	        user-select: none;
 	overflow: hidden;
 }
 
@@ -297,6 +288,17 @@ a.active-tab {
 	position: relative;
 	transition: 0.6s;
 	transition-timing-function: ease-in-out;
+}
+
+.slide {
+	max-width: 1200px !important;
+    width: 100% !important;
+	/*max-height: 85vh !important;
+    height: 95% !important;*/
+	height: 100%;
+	display: flex;
+	justify-content: space-around;
+	padding-top: 20px;
 }
 
 /* =====content slides=====*/
@@ -336,7 +338,7 @@ a.active-tab {
 	right: -7%;
 }
 
-.btn {
+.btn-slider {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -350,7 +352,7 @@ a.active-tab {
 	cursor: pointer;
 }
 
-.btn:hover {
+.btn-slider:hover {
 	color:#252525 !important;
 	background-color: #ffcc00;
 }
@@ -380,7 +382,6 @@ a.active-tab {
 
 .active {
 	background-color: #ffcc00;
-	box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 
 /* =======================================CALCULATOR ========================================*/
@@ -424,21 +425,24 @@ a.active-tab {
 
 button.price-btn {
 	display: block;
+	max-width: 300px;
+	width: 100%;
 	margin-top: 50px;
-	font-size: 12px;
+	font-size: 20px;
 	font-weight: 700;
-	padding: 10px 15px;
+	padding: 12px 10px;
 	background-color: #ffcc00;
-	color: #252525;
+	color: #fff;
 	border: 0;
 	border-radius: 30px;
 	outline: none;
-	text-transform: uppercase;
 }
 
 button.price-btn:hover {
 	box-shadow: 0 2px 2px 0 rgb(156 39 176 / 14%), 0 3px 1px -2px rgb(156 39 176 / 20%), 0 1px 5px 0 rgb(156 39 176 / 12%);
 	cursor: pointer;
+	background-color: #fff;
+	color:#252525;
 }
 
 h4.total-sum {
@@ -588,6 +592,281 @@ label[for="consult"]:active:after {
   margin-left: 60px;
 }
 
+/* ===============================SPECIAL OFFER =============================== */
+
+.btn-special-offer {
+	margin-top: 20px;
+	width: 100%;
+	border-radius: 30px;
+	border: 1px solid #0077db;
+	padding: 12px 10px;
+	font-size: 20px;
+	font-weight: 700;
+	color: #fff;
+	border: 1px solid #0077db;
+	background: #0077db;
+	outline: none;
+}
+
+.btn-special-offer:hover {
+	cursor: pointer;
+	background-color: #fff;
+	color:#252525;
+	border: 1px solid #252525;
+}
+
+.form fieldset {
+	border: none;
+	padding: 0;
+	padding: 10px 0;
+	position: relative;
+	clear: both;
+}
+  .form fieldset.fieldset-expiration {
+	float: left;
+	width: 60%;
+  }
+  .form fieldset.fieldset-expiration .select {
+	width: 84px;
+	margin-right: 12px;
+	float: left;
+  }
+  .form fieldset.fieldset-ccv {
+	clear: none;
+	float: right;
+	width: 86px;
+  }
+  .form fieldset label {
+	display: block;
+	text-transform: uppercase;
+	font-size: 11px;
+	color: rgba(0, 0, 0, 0.6);
+	margin-bottom: 5px;
+	font-weight: bold;
+	font-family: sans-serif;
+  }
+  .form fieldset input,
+  .form fieldset .select {
+	width: 100%;
+	height: 38px;
+	color: #252525;
+	padding: 10px;
+	border-radius: 5px;
+	font-size: 15px;
+	outline: none !important;
+	border: 1px solid rgba(0, 0, 0, 0.3);
+	box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.2);
+  }
+  .form fieldset input.input-cart-number,
+  .form fieldset .select.input-cart-number {
+	width: 82px;
+	display: inline-block;
+	margin-right: 8px;
+  }
+  .form fieldset input.input-cart-number:last-child,
+  .form fieldset .select.input-cart-number:last-child {
+	margin-right: 0;
+  }
+  .form fieldset .select {
+	position: relative;
+  }
+  .form fieldset .select::after {
+	content: '';
+	border-top: 8px solid #222;
+	border-left: 4px solid transparent;
+	border-right: 4px solid transparent;
+	position: absolute;
+	z-index: 2;
+	top: 14px;
+	right: 10px;
+	pointer-events: none;
+  }
+  .form fieldset .select select {
+	-webkit-appearance: none;
+	   -moz-appearance: none;
+			appearance: none;
+	position: absolute;
+	padding: 0;
+	border: none;
+	width: 100%;
+	outline: none !important;
+	top: 6px;
+	left: 6px;
+	background: none;
+  }
+  .form fieldset .select select :-moz-focusring {
+	color: transparent;
+	text-shadow: 0 0 0 #000;
+  }
+  
+  /*----- Checkout ---------*/
+  .checkout {
+	margin: 130px auto 30px;
+	position: relative;
+	max-width: 460px;
+	width: 100%;
+	background: white;
+	border-radius: 15px;
+	padding: 160px 45px 30px;
+	box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  }
+  
+  /*-----Credit Card --------*/
+  .credit-card-box {
+	max-width: 400px;
+	width: 100%;
+	height: 280px;
+	position: absolute;
+	top: -112px;
+	left: 50%;
+	transform: translateX(-50%);
+  }
+  .credit-card-box:hover .flip, .credit-card-box.hover .flip {
+	transform: rotateY(180deg);
+  }
+  .credit-card-box .front,
+  .credit-card-box .back {
+	width: 400px;
+	height: 250px;
+	border-radius: 15px;
+	-webkit-backface-visibility: hidden;
+			backface-visibility: hidden;
+	position: absolute;
+	background: linear-gradient(135deg, #88c4f6, #0077db);
+	color: #fff;
+	font-family: sans-serif;
+	top: 0;
+	left: 0;
+	text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+	box-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
+  }
+
+  .credit-card-box .front::before {
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background-size: cover;
+	background-image: url('../img/hech01.png'), linear-gradient(135deg, #88c4f6, #0077db);
+	border-radius: 15px;
+	opacity: 0.8;
+  }
+
+
+  .credit-card-box .flip {
+	transition: 0.6s;
+	transform-style: preserve-3d;
+	position: relative;
+  }
+  .credit-card-box .logo {
+	position: absolute;
+	top: 9px;
+	right: 20px;
+	font-family: sans-serif;
+	font-size: 36px;
+	font-weight: 700;
+  }
+
+  .credit-card-box .logo svg {
+	width: 100%;
+	height: auto;
+	fill: #fff;
+  }
+  .credit-card-box .front {
+	z-index: 2;
+	transform: rotateY(0deg);
+  }
+  .credit-card-box .back {
+	transform: rotateY(180deg);
+  }
+  .credit-card-box .back .logo {
+	top: 185px;
+  }
+  .credit-card-box .chip {
+	position: absolute;
+	width: 60px;
+	height: 45px;
+	top: 20px;
+	left: 20px;
+	background: linear-gradient(135deg, #ddccf0 0%, #d1e9f5 44%, #f8ece7 100%);
+	border-radius: 8px;
+  }
+  .credit-card-box .chip::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	border: 4px solid rgba(128, 128, 128, 0.1);
+	width: 80%;
+	height: 70%;
+	border-radius: 5px;
+  }
+  .credit-card-box .strip {
+	background: linear-gradient(135deg, #404040, #1a1a1a);
+	position: absolute;
+	width: 100%;
+	height: 50px;
+	top: 30px;
+	left: 0;
+  }
+  .credit-card-box .number {
+	position: absolute;
+	margin: 0 auto;
+	top: 103px;
+	left: 19px;
+	font-size: 23px;
+	font-family: sans-serif;
+	font-weight: 700;
+  }
+  .credit-card-box label {
+	font-size: 10px;
+	letter-spacing: 1px;
+	text-shadow: none;
+	text-transform: uppercase;
+	font-weight: normal;
+	opacity: 0.5;
+	display: block;
+	margin-bottom: 3px;
+  }
+  .credit-card-box .card-holder,
+  .credit-card-box .card-expiration-date {
+	position: absolute;
+	margin: 0 auto;
+	top: 180px;
+	left: 19px;
+	font-size: 22px;
+	text-transform: capitalize;
+  }
+  .credit-card-box .card-expiration-date {
+	text-align: left;
+	left: auto;
+	right: 20px;
+	font-size: 16px;
+  }
+  .credit-card-box .ccv {
+	height: 36px;
+	background: #fff;
+	width: 91%;
+	border-radius: 5px;
+	top: 110px;
+	left: 0;
+	right: 0;
+	position: absolute;
+	margin: 0 auto;
+	color: #000;
+	text-align: right;
+	padding: 10px;
+  }
+  .credit-card-box .ccv label {
+	margin: -25px 0 14px;
+	color: #fff;
+  }
+
 
 @media screen and (max-width: 940px) {
 	img.info-pic {
@@ -660,7 +939,18 @@ label[for="consult"]:active:after {
 		height: auto;
 	}
 
+	.form fieldset input.input-cart-number, .form fieldset .select.input-cart-number {
+		width: 64px;
+		margin-right: 4px;
+	}
 
+	.form fieldset input, .form fieldset .select {
+		height: 30px;
+	}
+
+	.credit-card-box {
+		width: 70%;
+	}
 	
 }
 
