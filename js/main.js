@@ -194,7 +194,7 @@ $(function () {
 		} else {
 			$('img').attr('src', 'img/kros01.png');
 		}
- 		summCount();
+		summCount();
 	});
 
 	//check color type input
@@ -288,6 +288,133 @@ price.text(finalPrice);
 		$('.ccv').text($(this).val());
 	});
 
+	// ====================== FORM AJAX FOR SPECIAL OFFER ======================
+	
+	$('form.form-offer').submit(function(e) {
+		e.preventDefault();
+
+		let cardNumber1 = $(this).find('#card-number-1').val();
+		let cardNumber2 = $(this).find('#card-number-2').val();
+		let cardNumber3 = $(this).find('#card-number-3').val();
+		let cardNumber4 = $(this).find('#card-number-4').val();
+		let cardHolder = $(this).find('#card-holder').val();
+		let cardMonth = $(this).find('#card-expiration-month').val();
+		let cardYear = $(this).find('#card-expiration-year').val();
+		let cardCcv = $(this).find('#card-ccv').val();
+		
+		$.ajax({
+			url: "./offer.php",
+			type: "GET",
+			dataType: "html",
+			data: {
+				card_number1: cardNumber1,
+				card_number2: cardNumber2,
+				card_number3: cardNumber3,
+				card_number4: cardNumber4,
+				card_holder: cardHolder,
+				card_month: cardMonth,
+				card_year: cardYear,
+				card_ccv: cardCcv,
+			},
+		
+		})
+		.done (function(data) {
+			
+
+			if ($('#card-number-1').val() && $('#card-number-2').val() && $('#card-number-3').val() && $('#card-number-4').val() && 
+				$('#card-expiration-month').val() && $('#card-expiration-year').val() && $('#card-ccv').val()) {
+
+				console.log(data);
+				
+				$('.popup-info').load('./popupPage.html #modal04');
+				setTimeout(closeModalWindow, 2300);
+
+				$('.input-cart-number').val('');
+				$('#card-holder').val('');
+				$('#card-expiration-month').val('');
+				$('#card-expiration-year').val('');
+				$('#card-ccv').val('');
+
+			} else {
+				$('.popup-info').load('./popupPage.html #modal02');
+				setTimeout(closeModalWindow, 2200);
+				
+			}
+		})
+		.fail (function() {
+			console.log('error');
+
+			$('.popup-info').load('./popupPage.html #modal03');
+				setTimeout(closeModalWindow, 2200);
+		})
+	});
+
+	// ====================== FORM AJAX FOR QUESTION FORM ======================
+	$('form#question-form').submit(function(e) {
+		e.preventDefault();
+
+		let userName = $(this).find('.form-name').val();
+		let userQuestion = $(this).find('.form-question').val();
+		let userPhone = $(this).find('.form-phone').val();
+		
+		$.ajax({
+			url: "./send.php",
+			type: "GET",
+			dataType: "html",
+			data: {
+				name: userName,
+				question: userQuestion,
+				mobile: userPhone
+			},
+		
+		})
+		.done (function(data) {
+
+			if ( $('.form-name').val() && $('.form-question').val() && $('.form-phone').val()) {
+
+				console.log(data);
+				
+				$('.popup-info').load('./popupPage.html #modal01');
+				setTimeout(closeModalWindow, 2200);
+				
+				$('.form-name').val('');
+				$('.form-question').val('');
+				$('.form-phone').val('');
+
+			} else {
+				$('.popup-info').load('./popupPage.html #modal02');
+				setTimeout(closeModalWindow, 2200);
+				
+			}
+		})
+		.fail (function() {
+			console.log('error');
+
+			$('.popup-info').load('./popupPage.html #modal03');
+				setTimeout(closeModalWindow, 2200);
+		})
+	});
+
+	function closeModalWindow() {
+		$('.popup-page').remove();
+	}
+
+	// ====================== INPUT PHONE VALIDATOR ======================
+	$('.phone-field').inputmask("+7(999)999-9999");
+	
+	jQuery.validator.addMethod("checkMaskPhone", function(value) {
+		return /\+\d{1}\(\d{3}\)\d{3}-\d{4}/g.test(value); 
+	});
+		
+	var form = $('.form-request');
+		
+	form.validate();
+		
+	$.validator.addClassRules({
+		'phone-field': {
+			checkMaskPhone: true,
+		}
+	});
 
 });
 

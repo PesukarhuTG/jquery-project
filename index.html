@@ -14,6 +14,7 @@
 		<span></span>
 	</div>
 
+	<div class="popup-info"></div>
 
 	<section id="info">
 		<h1>Покупаете подержанный <span class="main-color">автомобиль</span>?</h1>
@@ -21,14 +22,14 @@
 
 		<div class="container-info">
 			
-			  <!-- Nav tabs -->
-			  <ul class="nav nav-tabs">
+			<!-- Nav tabs -->
+			<ul class="nav nav-tabs">
 				<li class="nav-item active-tab"><a class="active-tab" href="#for-me" data-toggle="tab">Авто для себя</a></li>
 				<li class="nav-item"><a href="#for-relative" data-toggle="tab">Авто для близких</a></li>
 				<li class="nav-item"><a href="#for-business" data-toggle="tab">Авто для бизнеса</a></li>
-			  </ul>
-			  <!-- Tab panes -->
-			  <div class="tab-content">
+			</ul>
+			<!-- Tab panes -->
+			<div class="tab-content">
 				<!-- content 01 -->
 				<div class="tab-pane active-tab" id="for-me">
 					<p class="info-text">Покупка автомобиля – большой шаг, а выбор машины – долгий и ответственный процесс. Даже одна упущенная мелочь в состоянии разрушить 
@@ -287,97 +288,105 @@
 
 		<div class="checkout">
 			<div class="credit-card-box">
-			  <div class="flip">
-				<div class="front">
-				  <div class="chip"></div>
-				  <div class="logo">
-					VIP card
-				  </div>
-				  <div class="number">
-					  <span></span>
-					  <span></span>
-					  <span></span>
-					  <span></span>
-				  </div>
-				  <div class="card-holder">
-					<label>Card holder</label>
-					<div></div>
-				  </div>
-				  <div class="card-expiration-date">
-					<label>Activation date</label>
-					<span class="month"></span><span class="year"></span>
-				  </div>
+				<div class="flip">
+					<div class="front">
+						<div class="chip"></div>
+						<div class="logo">
+							VIP card
+						</div>
+						<div class="number">
+							<span></span>
+							<span></span>
+							<span></span>
+							<span></span>
+						</div>
+						<div class="card-holder">
+							<label>Card holder</label>
+						<div></div>
+						</div>
+						<div class="card-expiration-date">
+							<label>Activation date</label>
+							<span class="month"></span><span class="year"></span>
+						</div>
+					</div>
+					<div class="back">
+						<div class="strip"></div>
+						<div class="logo">
+							VIP card
+						</div>
+						<div class="ccv">
+							<label></label>
+						<div></div>
+						</div>
+					</div>
 				</div>
-				<div class="back">
-				  <div class="strip"></div>
-				  <div class="logo">
-					VIP card
-				  </div>
-				  <div class="ccv">
-					<label></label>
-					<div></div>
-				  </div>
-				</div>
-			  </div>
 			</div>
-			<form class="form" autocomplete="off" novalidate>
-			  <fieldset>
-				<label for="card-number">Придумайте индивидуальный номер Вашей карты</label>
-				<input type="num" id="card-number" class="input-cart-number" maxlength="4" />
-				<input type="num" id="card-number-1" class="input-cart-number" maxlength="4" />
-				<input type="num" id="card-number-2" class="input-cart-number" maxlength="4" />
-				<input type="num" id="card-number-3" class="input-cart-number" maxlength="4" />
-			  </fieldset>
-			  <fieldset>
-				<label for="card-holder">Укажите ваши ФИО</label>
-				<input type="text" id="card-holder" />	
-			  </fieldset>
-			  <fieldset class="fieldset-expiration">
-				<label for="card-expiration-month">Месяц/год оформления</label>
-				<div class="select">
-				  <select id="card-expiration-month">
-					<option></option>
-					<option>01</option>
-					<option>02</option>
-					<option>03</option>
-					<option>04</option>
-					<option>05</option>
-					<option>06</option>
-					<option>07</option>
-					<option>08</option>
-					<option>09</option>
-					<option>10</option>
-					<option>11</option>
-					<option>12</option>
-				  </select>
-				</div>
-				<div class="select">
-				  <select id="card-expiration-year">
-					<option></option>
-					<option>2020</option>
-					<option>2021</option>
-					<option>2022</option>
-				  </select>
-				</div>
-			  </fieldset>
-			  <fieldset class="fieldset-ccv">
-				<label for="card-ccv">CCV</label>
-				<input type="text" id="card-ccv" maxlength="3" />
-			  </fieldset>
-			  <button class="btn btn-special-offer">Отправить</button>
+			<form class="form form-offer" autocomplete="off" novalidate>
+				<fieldset>
+					<label for="card-number">Придумайте индивидуальный номер Вашей карты</label>
+					<input type="num" id="card-number-1" class="input-cart-number" maxlength="4" />
+					<input type="num" id="card-number-2" class="input-cart-number" maxlength="4" />
+					<input type="num" id="card-number-3" class="input-cart-number" maxlength="4" />
+					<input type="num" id="card-number-4" class="input-cart-number" maxlength="4" />
+				</fieldset>
+				<fieldset>
+					<label for="card-holder">Укажите ваши ФИО</label>
+					<input type="text" id="card-holder" />	
+				</fieldset>
+				<fieldset class="fieldset-expiration">
+					<label for="card-expiration-month">Месяц/год оформления</label>
+					<div class="select">
+						<select id="card-expiration-month">
+							<option></option>
+							<option>01</option>
+							<option>02</option>
+							<option>03</option>
+							<option>04</option>
+							<option>05</option>
+							<option>06</option>
+							<option>07</option>
+							<option>08</option>
+							<option>09</option>
+							<option>10</option>
+							<option>11</option>
+							<option>12</option>
+						</select>
+					</div>
+					<div class="select">
+						<select id="card-expiration-year">
+							<option></option>
+							<option>2020</option>
+							<option>2021</option>
+							<option>2022</option>
+						</select>
+					</div>
+				</fieldset>
+				<fieldset class="fieldset-ccv">
+					<label for="card-ccv">CCV</label>
+					<input type="text" id="card-ccv" maxlength="3" />
+				</fieldset>
+				<button class="btn btn-special-offer">Отправить</button>
 			</form>
-		  </div>
+		</div>
 
 	</section>
 
 	<section id="contacts">
 		<h2 class="text-center heading2">Контакты</h2>
 
-		<div><span>Адрес:</span><span>Москва, ул. Прибрежная 18</span></div>
-		<div><span>Email:</span><a href="mailto:test@tabs.ru">test@tabs.ru</a></div>
-		<div><span>Телефон:</span><a href="tel:+79600000000">+7 960 000 00 00</a></div>
+		<div><span>Адрес: </span><span>Москва, ул. Прибрежная 18</span></div>
+		<div><span>Email: </span><a class="link" href="mailto:info@yourauto.ru">info@yourauto.ru</a></div>
+		<div><span>Телефон: </span><a class="link" href="tel:+88000000000">8 800 000 00 00</a></div>
+
+		<p class="info-description">Остались вопросы?<br>Напишите нам, и мы свяжемся с вами в ближайшее время!</p>
+
+		<form id="question-form" action="#" class="contact-form form-request">
+			<input type="text" class="form-control form-name" required placeholder="Ваше имя">
+			<textarea class="form-control form-question" placeholder="Ваш вопрос"></textarea>
+			<input type="text" class="form-control form-phone phone-field" name="phone" required placeholder="Ваш телефон" data-rule-required="true" data-rule-minlength="10" data-msg="Введите номер телефона">
+			<button type="submit" class="price-btn question-btn">Задать вопрос</button>
+		</form>
 	</section>
-    
 
 	<!------------------------------- POPUP MENU ------------------------------->
 	<menu>
@@ -390,12 +399,11 @@
 		</ul>
 	</menu>
 	
-	
-	
 	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 	<script src='js/jquery.numeric.min.js'></script>
+	<script src='js/jquery.validate.min.js'></script>
+	<script src='js/jquery.inputmask.min.js'></script>
 	<script src="js/main.js"></script> 
 	
-	
-</body> 
-</html>	
+</body>
+</html>
